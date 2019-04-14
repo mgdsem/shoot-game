@@ -1,0 +1,16 @@
+.header {
+@include flex-center;
+
+   width: 100%;
+   position: relative;
+   height: 13rem;
+   padding-top: 1rem;
+   background-color: $header-background-color;
+
+
+   &__title {
+    font-family: 'Monoton', cursive;
+    font-size: 9rem;
+    color: $title-color;
+   }
+}

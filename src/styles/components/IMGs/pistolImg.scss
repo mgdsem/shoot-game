@@ -1,0 +1,15 @@
+.pistolImg {
+    width: 12rem;
+    height: 12rem;
+    position: absolute;
+    top: 1rem;
+
+    &--right {
+    right: 9rem;
+    }
+    
+    &--left {
+        left: 9rem;
+        transform: rotateY(180deg);
+    }
+}
