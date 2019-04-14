@@ -1,0 +1,17 @@
+.boom {
+    width: 20rem;
+    height: 20rem;
+
+    &__wrapper {
+        @include flex-center;
+
+        position: relative;
+    }
+
+    &__text {
+        font-size: 4rem;
+        position: absolute;
+        font-family: 'Lobster', cursive;
+        width: 30rem;
+    }
+}
