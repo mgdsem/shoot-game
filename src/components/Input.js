@@ -2,7 +2,6 @@ import React from 'react';
 
 import arrow from '../assets/img/arrow.svg';
 
-
 const Input = ({
     labelText,
     type,

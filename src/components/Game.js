@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 import BeforeGame from './BeforeGame';
 
-
 class Game extends Component {
     constructor(props) {
         super(props);
@@ -25,8 +24,6 @@ class Game extends Component {
     }
 
     render() {
-        console.log(this.state);
-
         return (
             <div>
                 <BeforeGame onStartGame={this.onStartGame} />
