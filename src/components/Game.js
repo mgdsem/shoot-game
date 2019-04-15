@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import BeforeGame from './BeforeGame';
+import InProgress from './InProgress';
 
 class Game extends Component {
     constructor(props) {
@@ -26,7 +27,13 @@ class Game extends Component {
     render() {
         return (
             <div>
-                <BeforeGame onStartGame={this.onStartGame} />
+                {this.state.currentGameStatus === 'before' && <BeforeGame onStartGame={this.onStartGame} />}
+                {this.state.currentGameStatus === 'inProgress' &&
+                    <InProgress
+                        player1={this.state.player1}
+                        player2={this.state.player2}
+                    />
+                }
             </div>
         )
     }

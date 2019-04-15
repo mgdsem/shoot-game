@@ -24,6 +24,8 @@ const Input = ({
                 value={value}
                 placeholder={placeholder}
                 onChange={onChange}
+                maxLength={10}
+                autoComplete="off"
             />
         </div>
     );
