@@ -1,0 +1,25 @@
+.life-bar {
+    width: 50rem;
+    height: 5rem;
+    background-color: $life-bar-yellow;
+    // position: absolute;
+
+    &__inner-wrapper {
+        // @include flex-center;
+
+        // justify-content: space-between;
+        // width: 50rem;
+        // height: 5rem;
+        // width: 100%;
+        // position: relative;
+        background-color: transparent;
+        border: 0.5rem solid $life-bar-border-black;
+    }
+
+    &__wrapper {
+        @include flex-center;
+
+        margin: 0 auto;
+        width: 90%;
+    }
+}

@@ -1,0 +1,16 @@
+.gun-target {
+    width: 15rem;
+    height: 15rem;
+    
+
+    &__wrapper {
+        @include flex-center;
+        margin-top: 2rem;
+    }
+
+    &__text {
+        font-size: 1rem;
+        font-family: 'Lobster', cursive;
+        transform: translateY(-8.5rem);
+    }
+}

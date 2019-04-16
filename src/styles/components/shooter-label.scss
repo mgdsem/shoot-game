@@ -14,11 +14,11 @@
     &__wrapper {
         @include flex-center;
 
-        margin-top: 5rem;
+        margin-top: 3.5rem;
     }
 
     &__text {
-        font-size: 3.5rem;
+        font-size: 2.5rem;
         font-family: 'Lobster', cursive;
         position: absolute;
         transform: translateY(-60%)

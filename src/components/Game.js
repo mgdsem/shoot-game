@@ -10,9 +10,9 @@ class Game extends Component {
         this.onStartGame = this.onStartGame.bind(this);
 
         this.state = {
-            currentGameStatus: 'before',
-            player1: '',
-            player2: ''
+            currentGameStatus: 'inProgress',
+            player1: 'Magda',
+            player2: 'Lukasz'
         }
     }
 
