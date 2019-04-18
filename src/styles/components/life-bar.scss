@@ -2,16 +2,8 @@
     width: 50rem;
     height: 5rem;
     background-color: $life-bar-yellow;
-    // position: absolute;
-
+    
     &__inner-wrapper {
-        // @include flex-center;
-
-        // justify-content: space-between;
-        // width: 50rem;
-        // height: 5rem;
-        // width: 100%;
-        // position: relative;
         background-color: transparent;
         border: 0.5rem solid $life-bar-border-black;
     }
@@ -21,5 +13,33 @@
 
         margin: 0 auto;
         width: 90%;
+    }
+
+    &__pointer {
+        width: 12rem;
+        height: 6rem;
+
+         &--is-left {
+            transform: rotateY(180deg);
+         }
+    }
+
+    &__pointer-wrapper {
+        @include flex-center;
+        
+
+        &__active-div {
+            @include flex-center;
+
+            width: 50%;         
+        }
+
+        &__unactive-div {
+            width: 50%;
+        }
+
+        &--switch {
+            flex-direction: row-reverse;
+        }
     }
 }

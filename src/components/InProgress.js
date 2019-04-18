@@ -14,11 +14,25 @@ class InProgress extends Component {
     constructor(props) {
         super(props)
 
+        this.onShoot = this.onShoot.bind(this);
+
         this.state = {
             player1: '',
-            player2: ''
+            player2: '',
+            isPlayer1Active: true,
+            player1Points: 50,
+            player2Points: 50
+
         }
     }
+
+    onShoot() {
+        this.setState((prevState) => ({
+            isPlayer1Active: !prevState.isPlayer1Active,
+
+        }))
+    }
+
     render() {
         return (
             <div>
@@ -40,8 +54,15 @@ class InProgress extends Component {
                     <LifeBar isRight />
                 </div>
 
+                <div className={`life-bar__pointer-wrapper ${!this.state.isPlayer1Active ? 'life-bar__pointer-wrapper--switch' : ''}`}>
+                    <div className="life-bar__pointer-wrapper__active-div">
+                        <img alt="gun" className={`life-bar__pointer ${this.state.isPlayer1Active ? 'life-bar__pointer--is-left' : ''}`} src={pistol2} />
+                    </div>
+                    <div className="life-bar__pointer-wrapper__unactive-div"></div>
+                </div>
+
                 <div className="gun-target__wrapper">
-                    <Button>
+                    <Button onClick={this.onShoot}>
                         <img alt="gun target" className="gun-target" src={gunTarget} />
                         <div className="gun-target__text">die mother*ucker!</div>
                     </Button>
