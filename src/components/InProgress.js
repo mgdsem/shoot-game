@@ -6,6 +6,7 @@ import shooterLabel from '../assets/img/shooterLabel.png';
 import skull from '../assets/img/skull.svg';
 import pistol2 from '../assets/img/pistol2.png';
 import gunTarget from '../assets/img/gunTarget.png';
+import { getRandomNumber } from '../helpers/random';
 
 
 
@@ -15,25 +16,39 @@ class InProgress extends Component {
         super(props)
 
         this.onShoot = this.onShoot.bind(this);
+        this.onAfterShoot = this.onAfterShoot.bind(this);
 
         this.state = {
             player1: '',
             player2: '',
             isPlayer1Active: true,
             player1Points: 50,
-            player2Points: 50
-
+            player2Points: 50,
+            isGameWon: false
         }
     }
 
     onShoot() {
-        this.setState((prevState) => ({
-            isPlayer1Active: !prevState.isPlayer1Active,
+        if (this.state.isPlayer1Active) {
+            this.onAfterShoot('player2Points');
+        } else {
+            this.onAfterShoot('player1Points');
+        }
+    }
 
-        }))
+    onAfterShoot(playerPoints) {
+        this.setState((prevState) => {
+            const newPoints = prevState[playerPoints] - getRandomNumber();
+            return {
+                isPlayer1Active: !prevState.isPlayer1Active,
+                [playerPoints]: newPoints,
+                isGameWon: newPoints <= 0
+            }
+        });
     }
 
     render() {
+        console.log(this.state);
         return (
             <div>
                 <div className="shooter-label__wrapper">
