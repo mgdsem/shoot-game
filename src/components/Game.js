@@ -8,11 +8,13 @@ class Game extends Component {
         super(props);
 
         this.onStartGame = this.onStartGame.bind(this);
+        this.onEndGame = this.onEndGame.bind(this);
 
         this.state = {
             currentGameStatus: 'inProgress',
             player1: 'Magda',
-            player2: 'Lukasz'
+            player2: 'Lukasz',
+            winner: ''
         }
     }
 
@@ -24,6 +26,13 @@ class Game extends Component {
         });
     }
 
+    onEndGame(winner) {
+        this.setState({
+            winner: winner,
+            currentGameStatus: 'endGame'
+        })
+    }
+
     render() {
         return (
             <div>
@@ -32,8 +41,10 @@ class Game extends Component {
                     <InProgress
                         player1={this.state.player1}
                         player2={this.state.player2}
+                        onEndGame={this.onEndGame}
                     />
                 }
+                {this.state.currentGameStatus === 'endGame' && <div>placeholder</div>}
             </div>
         )
     }

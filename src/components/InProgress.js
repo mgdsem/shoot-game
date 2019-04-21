@@ -19,12 +19,17 @@ class InProgress extends Component {
         this.onAfterShoot = this.onAfterShoot.bind(this);
 
         this.state = {
-            player1: '',
-            player2: '',
             isPlayer1Active: true,
             player1Points: 50,
             player2Points: 50,
-            isGameWon: false
+            isGameWon: false,
+            winner: ''
+        }
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        if (!prevState.isGameWon && this.state.isGameWon) {
+            this.props.onEndGame(this.state.winner);
         }
     }
 
@@ -39,10 +44,17 @@ class InProgress extends Component {
     onAfterShoot(playerPoints) {
         this.setState((prevState) => {
             const newPoints = prevState[playerPoints] - getRandomNumber();
+            const isGameWon = newPoints <= 0;
+            let winner = '';
+            if (isGameWon) {
+                winner = prevState.isPlayer1Active ? this.props.player1 : this.props.player2;
+            }
+
             return {
                 isPlayer1Active: !prevState.isPlayer1Active,
                 [playerPoints]: newPoints,
-                isGameWon: newPoints <= 0
+                isGameWon: isGameWon,
+                winner: winner
             }
         });
     }
@@ -64,9 +76,9 @@ class InProgress extends Component {
                 </div>
 
                 <div className="life-bar__wrapper">
-                    <LifeBar isLeft />
+                    <LifeBar playerPoints={this.state.player1Points} isLeft />
                     <img alt="skull" className="skull" src={skull} />
-                    <LifeBar isRight />
+                    <LifeBar playerPoints={this.state.player2Points} isRight />
                 </div>
 
                 <div className={`life-bar__pointer-wrapper ${!this.state.isPlayer1Active ? 'life-bar__pointer-wrapper--switch' : ''}`}>

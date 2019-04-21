@@ -1,9 +1,18 @@
 .life-bar {
-    width: 50rem;
-    height: 5rem;
-    background-color: $life-bar-yellow;
+    height: 100%;
+    background-color: $life-bar-green;
+    transition: all 0.3s linear;
+
+    &--is-left {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
     
     &__inner-wrapper {
+        position: relative;
+        width: 50rem;
+        height: 5rem;
         background-color: transparent;
         border: 0.5rem solid $life-bar-border-black;
     }
