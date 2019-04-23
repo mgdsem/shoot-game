@@ -1,0 +1,54 @@
+.end-game {
+    @include flex-center;
+    flex-direction: column;
+
+    &__fire-wrapper {
+        @include flex-center;
+
+        margin-top: 5rem;
+        transform: translateX(10px);
+    }
+
+    &__fire-img {
+        width: 30rem;
+        height: 30rem;
+    }
+
+    &__fire-text {
+        transform: translateY(100%);
+        font-size: 3rem;
+        font-family: 'Lobster', cursive;
+    }
+}
+
+.end-text {
+font-size: 3rem;
+transform: scale(0.5);
+opacity: 0;
+transition: all 1s;
+font-family: 'Alfa Slab One', cursive;
+
+
+&--is-visible {
+    opacity: 1;
+    transform: scale(1);
+}
+    &__name {
+        font-size: 10rem;
+        transform: scale(0.5);
+        opacity: 0;
+        transition: all 2s;
+        font-family: 'Alfa Slab One', cursive;
+
+
+        &--is-visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+    &__wrapper {
+        text-align: center;
+        margin-top: 5rem;
+    }
+}

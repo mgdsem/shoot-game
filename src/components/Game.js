@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import BeforeGame from './BeforeGame';
 import InProgress from './InProgress';
+import EndGame from './EndGame';
 
 class Game extends Component {
     constructor(props) {
@@ -9,11 +10,12 @@ class Game extends Component {
 
         this.onStartGame = this.onStartGame.bind(this);
         this.onEndGame = this.onEndGame.bind(this);
+        this.onTryAgain = this.onTryAgain.bind(this);
 
         this.state = {
-            currentGameStatus: 'inProgress',
-            player1: 'Magda',
-            player2: 'Lukasz',
+            currentGameStatus: 'before',
+            player1: '',
+            player2: '',
             winner: ''
         }
     }
@@ -33,6 +35,12 @@ class Game extends Component {
         })
     }
 
+    onTryAgain() {
+        this.setState({
+            currentGameStatus: 'before'
+        })
+    }
+
     render() {
         return (
             <div>
@@ -44,7 +52,7 @@ class Game extends Component {
                         onEndGame={this.onEndGame}
                     />
                 }
-                {this.state.currentGameStatus === 'endGame' && <div>placeholder</div>}
+                {this.state.currentGameStatus === 'endGame' && <EndGame winner={this.state.winner} onTryAgain={this.onTryAgain} />}
             </div>
         )
     }
