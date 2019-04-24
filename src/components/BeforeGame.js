@@ -11,26 +11,49 @@ class BeforeGame extends Component {
         this.onPlayer1Change = this.onPlayer1Change.bind(this);
         this.onPlayer2Change = this.onPlayer2Change.bind(this);
         this.onBeginGame = this.onBeginGame.bind(this);
+        this.onEnter = this.onEnter.bind(this);
 
         this.state = {
             player1: '',
-            player2: ''
+            player2: '',
+            hasError: false
+        }
+    }
+
+    componentDidMount() {
+        document.addEventListener('keyup', this.onEnter);
+    }
+
+    componentWillUnmount() {
+        document.removeEventListener('keyup', this.onEnter);
+    }
+
+    onEnter(e) {
+        if (e.code === 'Enter') {
+            this.onBeginGame();
         }
     }
 
     onPlayer1Change(e) {
         this.setState({
-            player1: e.target.value
+            player1: e.target.value,
+            hasError: false
         });
     }
 
     onPlayer2Change(e) {
         this.setState({
-            player2: e.target.value
+            player2: e.target.value,
+            hasError: false
         });
     }
 
     onBeginGame() {
+        if (!this.state.player1 || !this.state.player2) {
+            return this.setState({
+                hasError: true
+            });
+        }
         this.props.onStartGame(this.state.player1, this.state.player2);
     }
 
@@ -66,6 +89,7 @@ class BeforeGame extends Component {
                         </div>
                     </div>
                 </Button>
+                {this.state.hasError && <div className="error">You have to fill both name fields!</div>}
             </div>
         );
     }

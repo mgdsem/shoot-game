@@ -17,6 +17,7 @@ class InProgress extends Component {
 
         this.onShoot = this.onShoot.bind(this);
         this.onAfterShoot = this.onAfterShoot.bind(this);
+        this.onEnter = this.onEnter.bind(this);
 
         this.state = {
             isPlayer1Active: true,
@@ -27,9 +28,23 @@ class InProgress extends Component {
         }
     }
 
+    componentDidMount() {
+        document.addEventListener('keyup', this.onShoot);
+    }
+
     componentDidUpdate(prevProps, prevState) {
         if (!prevState.isGameWon && this.state.isGameWon) {
             this.props.onEndGame(this.state.winner);
+        }
+    }
+
+    componentWillUnmount() {
+        document.removeEventListener('keyup', this.onShoot);
+    }
+
+    onEnter(e) {
+        if (e.code === 'Enter') {
+            this.onShoot();
         }
     }
 

@@ -16,7 +16,8 @@ class Game extends Component {
             currentGameStatus: 'before',
             player1: '',
             player2: '',
-            winner: ''
+            winner: '',
+
         }
     }
 

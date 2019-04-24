@@ -7,6 +7,8 @@ class EndGame extends Component {
     constructor(props) {
         super(props);
 
+        this.onEnter = this.onEnter.bind(this);
+
         this.state = {
             winner: '',
             isTextVisible: false,
@@ -24,6 +26,17 @@ class EndGame extends Component {
                 isNameVisible: true
             })
         }, 1000);
+        document.addEventListener('keyup', this.onEnter);
+    }
+
+    componentWillUnmount() {
+        document.removeEventListener('keyup', this.onEnter);
+    }
+
+    onEnter(e) {
+        if (e.code === 'Enter') {
+            this.props.onTryAgain();
+        }
     }
 
     render() {
