@@ -8,10 +8,10 @@
     background-color: $header-background-color;
     border-bottom: 2rem solid $border-bottom-header-color;
 
-   &__title {
-    font-family: 'Monoton', cursive;
-    font-size: 9rem;
-    word-spacing: 1rem;
-    color: $title-and-game-color;
+    &__title {
+        font-family: 'Monoton', cursive;
+        font-size: 9rem;
+        word-spacing: 1rem;
+        color: $title-and-game-color;
    }
 }

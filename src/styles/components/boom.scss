@@ -14,5 +14,9 @@
         position: absolute;
         font-family: 'Lobster', cursive;
         width: 30rem;
+
+       &:hover {
+           color: $shooter-gold;
+       }
     }
 }

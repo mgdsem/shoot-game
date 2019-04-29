@@ -33,13 +33,13 @@ class Game extends Component {
         this.setState({
             winner: winner,
             currentGameStatus: 'endGame'
-        })
+        });
     }
 
     onTryAgain() {
         this.setState({
             currentGameStatus: 'before'
-        })
+        });
     }
 
     render() {
@@ -53,9 +53,12 @@ class Game extends Component {
                         onEndGame={this.onEndGame}
                     />
                 }
-                {this.state.currentGameStatus === 'endGame' && <EndGame winner={this.state.winner} onTryAgain={this.onTryAgain} />}
+                {this.state.currentGameStatus === 'endGame' && <EndGame
+                    winner={this.state.winner}
+                    onTryAgain={this.onTryAgain}
+                />}
             </div>
-        )
+        );
     }
 }
 

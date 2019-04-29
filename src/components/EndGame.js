@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import Button from './Button';
 import flame from '../assets/img/flame2.png';
+import BulletHole from './BulletHole';
 
 class EndGame extends Component {
     constructor(props) {
@@ -15,6 +16,7 @@ class EndGame extends Component {
             isNameVisible: false
         }
     }
+
     componentDidMount() {
         setTimeout(() => {
             this.setState({
@@ -41,36 +43,36 @@ class EndGame extends Component {
 
     render() {
         return (
-            <div className="end-game">
-                <div className="end-text__wrapper">
-                    <div className={`end-text ${this.state.isTextVisible ? 'end-text--is-visible' : ''}`}>The winner is</div>
-                    <div className={`end-text__name ${this.state.isNameVisible ? 'end-text__name--is-visible' : ''}`}>{this.props.winner}</div>
+            <div className="end-game__wrapper">
+                <div className="holes-wrapper">
+                    <BulletHole index={1} />
+                    <BulletHole index={2} />
                 </div>
-                <Button onClick={this.props.onTryAgain}>
-                    <div className="end-game__fire-wrapper">
-                        <div className="end-game__fire-text">try</div>
-                        <img alt="fire" className="end-game__fire-img" src={flame} />
-                        <div className="end-game__fire-text">again!</div>
+
+                <div className="end-game">
+                    <div className="end-text__wrapper">
+                        <div className={`end-text ${this.state.isTextVisible ? 'end-text--is-visible' : ''}`}>The winner is</div>
+                        <div className={`end-text__name ${this.state.isNameVisible ? 'end-text__name--is-visible' : ''}`}>{this.props.winner}</div>
                     </div>
-                </Button>
+
+                    <Button onClick={this.props.onTryAgain}>
+                        <div className="end-game__fire-wrapper">
+                            <div className="end-game__fire-text">try</div>
+                            <img alt="fire" className="end-game__fire-img" src={flame} />
+                            <div className="end-game__fire-text">again!</div>
+                        </div>
+                    </Button>
+                </div>
+
+                <div className="holes-wrapper">
+                    <BulletHole index={3} />
+                    <BulletHole index={4} />
+                    <BulletHole index={5} />
+                </div>
+
             </div>
         )
     }
 }
 
 export default EndGame;
-
-// import React from 'react'
-
-// const EndGame = ({
-//     winner
-// }) => (
-//         <div className="end-game">
-//             <div className="end-text__wrapper">
-//                 <div className="end-text">The winner is</div>
-//                 <div className="end-text__name">{winner}</div>
-//             </div>
-//         </div>
-//     );
-
-// export default EndGame;

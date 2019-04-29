@@ -1,12 +1,17 @@
 .end-game {
     @include flex-center;
     flex-direction: column;
+    width: 33.3%;
+
+    &__wrapper {
+        @include flex-center;
+    }
 
     &__fire-wrapper {
         @include flex-center;
 
         margin-top: 5rem;
-        transform: translateX(10px);
+        transform: translateX(15px);
     }
 
     &__fire-img {
@@ -33,13 +38,13 @@ font-family: 'Alfa Slab One', cursive;
     opacity: 1;
     transform: scale(1);
 }
+
     &__name {
         font-size: 10rem;
         transform: scale(0.5);
         opacity: 0;
         transition: all 2s;
         font-family: 'Alfa Slab One', cursive;
-
 
         &--is-visible {
             opacity: 1;

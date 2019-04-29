@@ -89,6 +89,7 @@ class BeforeGame extends Component {
                         </div>
                     </div>
                 </Button>
+
                 {this.state.hasError && <div className="error">You have to fill both name fields!</div>}
             </div>
         );

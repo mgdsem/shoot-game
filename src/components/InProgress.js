@@ -8,9 +8,6 @@ import pistol2 from '../assets/img/pistol2.png';
 import gunTarget from '../assets/img/gunTarget.png';
 import { getRandomNumber } from '../helpers/random';
 
-
-
-
 class InProgress extends Component {
     constructor(props) {
         super(props)
@@ -100,6 +97,7 @@ class InProgress extends Component {
                     <div className="life-bar__pointer-wrapper__active-div">
                         <img alt="gun" className={`life-bar__pointer ${this.state.isPlayer1Active ? 'life-bar__pointer--is-left' : ''}`} src={pistol2} />
                     </div>
+
                     <div className="life-bar__pointer-wrapper__unactive-div"></div>
                 </div>
 
