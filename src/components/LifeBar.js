@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const LifeBar = ({
     isLeft,
@@ -28,6 +29,15 @@ const LifeBar = ({
             </div>
         </div>
     );
+}
+
+LifeBar.propTypes = {
+    isLeft: PropTypes.bool,
+    playerPoints: PropTypes.number.isRequired
+}
+
+LifeBar.defaultProps = {
+    isLeft: false
 }
 
 export default LifeBar;

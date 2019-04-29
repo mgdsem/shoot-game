@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import Input from './Input';
 import Button from './Button';
 import boomSrc from '../assets/img/boom.png';
 
 class BeforeGame extends Component {
+    static propTypes = {
+        onStartGame: PropTypes.func.isRequired
+    }
+
     constructor(props) {
         super(props);
 

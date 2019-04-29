@@ -1,10 +1,16 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import Button from './Button';
 import flame from '../assets/img/flame2.png';
 import BulletHole from './BulletHole';
 
 class EndGame extends Component {
+    static propTypes = {
+        winner: PropTypes.string.isRequired,
+        onTryAgain: PropTypes.func.isRequired
+    }
+
     constructor(props) {
         super(props);
 

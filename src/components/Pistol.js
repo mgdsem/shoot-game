@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 
 import pistolSrc from '../assets/img/pistol.png';
 
@@ -18,6 +19,14 @@ const Pistol = ({
             <img alt="pistol" src={pistolSrc} />
         </button>
     );
+}
+
+Pistol.propTypes = {
+    isRight: PropTypes.bool
+}
+
+Pistol.defaultProps = {
+    isRight: false
 }
 
 export default Pistol;

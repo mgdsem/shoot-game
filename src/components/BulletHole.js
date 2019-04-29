@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 
 import bulletHoleSrc from '../assets/img/bullet-hole.png';
 
@@ -18,6 +19,10 @@ const BulletHole = ({
     return (
         <img alt="bullet hole" src={bulletHoleSrc} className={`bullet-hole bullet-hole__${index} ${isVisible ? `bullet-hole__${index}--is-visible` : ''}`} />
     );
+}
+
+BulletHole.propTypes = {
+    index: PropTypes.number.isRequired
 }
 
 export default BulletHole;

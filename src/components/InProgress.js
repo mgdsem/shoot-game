@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import Button from './Button';
 import LifeBar from './LifeBar';
@@ -9,6 +10,12 @@ import gunTarget from '../assets/img/gunTarget.png';
 import { getRandomNumber } from '../helpers/random';
 
 class InProgress extends Component {
+    static propTypes = {
+        player1: PropTypes.string.isRequired,
+        player2: PropTypes.string.isRequired,
+        onEndGame: PropTypes.func.isRequired
+    }
+
     constructor(props) {
         super(props)
 
