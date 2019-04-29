@@ -79,7 +79,6 @@ class InProgress extends Component {
     }
 
     render() {
-        console.log(this.state);
         return (
             <div>
                 <div className="shooter-label__wrapper">
