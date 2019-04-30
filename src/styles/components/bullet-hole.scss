@@ -1,11 +1,11 @@
 .bullet-hole {
-    @include transform(x, y);
+    @include translate(x, y);
 
     position: absolute;
     display: none;
 
     &__1 {
-        @include transform(50px, 20px);
+        @include translate(50px, 20px);
         
         &--is-visible {
             display: block;
@@ -13,7 +13,7 @@
     }
 
     &__2 {
-        @include transform(300px, -300px);
+        @include translate(300px, -300px);
 
         &--is-visible {
             display: block;
@@ -21,7 +21,7 @@
     }
 
     &__3 {
-        @include transform(230px, -220px);
+        @include translate(230px, -220px);
 
         &--is-visible {
             display: block;
@@ -29,7 +29,7 @@
     }
 
     &__4 {
-        @include transform(100px, 150px);
+        @include translate(100px, 150px);
 
         &--is-visible {
             display: block;
@@ -37,7 +37,7 @@
     }
 
     &__5 {
-        @include transform(-20px, -50px);
+        @include translate(-20px, -50px);
 
         &--is-visible {
             display: block;

@@ -4,6 +4,6 @@
     justify-content: center;
 }
 
-@mixin transform($x, $y) {
+@mixin translate($x, $y) {
     transform: translateX($x) translateY($y);  
 }
