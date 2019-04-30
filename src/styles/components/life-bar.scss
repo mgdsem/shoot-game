@@ -1,0 +1,55 @@
+.life-bar {
+    height: 100%;
+    background-color: $life-bar-green;
+    transition: all 0.3s linear;
+
+    &--is-left {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+    
+    &__inner-wrapper {
+        position: relative;
+        width: 50rem;
+        height: 5rem;
+        background-color: transparent;
+        border: 0.5rem solid $life-bar-border-black;
+    }
+
+    &__wrapper {
+        @include flex-center;
+
+        margin: 0 auto;
+        width: 90%;
+    }
+
+    &__pointer {
+        width: 12rem;
+        height: 6rem;
+        
+         &--is-left {
+            transform: rotateY(180deg);
+         }
+    }
+
+    &__pointer-wrapper {
+        @include flex-center;
+        
+
+        &__active-div {
+            @include flex-center;
+
+            width: 50%;         
+        }
+
+        &__unactive-div {
+            width: 50%;
+        }
+
+        &--switch {
+            flex-direction: row-reverse;
+        }
+    }
+}
+

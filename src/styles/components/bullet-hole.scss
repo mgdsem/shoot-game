@@ -1,0 +1,53 @@
+.bullet-hole {
+    @include translate(x, y);
+
+    position: absolute;
+    display: none;
+
+    &__1 {
+        @include translate(50px, 20px);
+        
+        &--is-visible {
+            display: block;
+        }
+    }
+
+    &__2 {
+        @include translate(300px, -300px);
+
+        &--is-visible {
+            display: block;
+        }
+    }
+
+    &__3 {
+        @include translate(230px, -220px);
+
+        &--is-visible {
+            display: block;
+            }
+    }
+
+    &__4 {
+        @include translate(100px, 150px);
+
+        &--is-visible {
+            display: block;
+            }
+    }
+
+    &__5 {
+        @include translate(-20px, -50px);
+
+        &--is-visible {
+            display: block;
+            }
+    }
+}
+
+.holes-wrapper {
+    width: 33.3%;
+    height: 100%;
+    position: relative;
+}
+

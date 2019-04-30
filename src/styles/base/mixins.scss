@@ -3,3 +3,7 @@
     align-items: center;
     justify-content: center;
 }
+
+@mixin translate($x, $y) {
+    transform: translateX($x) translateY($y);  
+}

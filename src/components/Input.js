@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import arrow from '../assets/img/arrow.svg';
 
@@ -24,8 +25,24 @@ const Input = ({
                 value={value}
                 placeholder={placeholder}
                 onChange={onChange}
+                maxLength={10}
+                autoComplete="off"
             />
         </div>
     );
+
+Input.propTypes = {
+    labelText: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired,
+    value: PropTypes.string.isRequired,
+    placeholder: PropTypes.string.isRequired,
+    onChange: PropTypes.func.isRequired,
+    isRight: PropTypes.bool
+}
+
+Input.defaultProps = {
+    isRight: false
+}
 
 export default Input;

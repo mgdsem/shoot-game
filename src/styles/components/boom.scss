@@ -6,6 +6,7 @@
         @include flex-center;
 
         position: relative;
+        margin-top: 5rem;
     }
 
     &__text {
@@ -13,5 +14,9 @@
         position: absolute;
         font-family: 'Lobster', cursive;
         width: 30rem;
+
+       &:hover {
+           color: $shooter-gold;
+       }
     }
 }
