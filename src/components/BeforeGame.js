@@ -63,6 +63,8 @@ class BeforeGame extends Component {
     }
 
     render() {
+        const { player1, player2, hasError } = this.state;
+
         return (
             <div className="before-game">
                 <div className="input__wrapper">
@@ -70,7 +72,7 @@ class BeforeGame extends Component {
                         labelText="Shooter 1"
                         type="text"
                         id="player1"
-                        value={this.state.player1}
+                        value={player1}
                         placeholder="1st shooter name"
                         onChange={this.onPlayer1Change}
                     />
@@ -79,7 +81,7 @@ class BeforeGame extends Component {
                         labelText="Shooter 2"
                         type="text"
                         id="player2"
-                        value={this.state.player2}
+                        value={player2}
                         placeholder="2nd shooter name"
                         onChange={this.onPlayer2Change}
                         isRight
@@ -95,7 +97,7 @@ class BeforeGame extends Component {
                     </div>
                 </Button>
 
-                {this.state.hasError && <div className="error">You have to fill both name fields!</div>}
+                {hasError && <div className="error">You have to fill both name fields!</div>}
             </div>
         );
     }

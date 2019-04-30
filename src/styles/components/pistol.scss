@@ -16,20 +16,20 @@
     
     &--right {
         right: 9rem;
-    }
 
-    &--right-animated {
-        animation: rotate-right 0.5s;
+            &-animated {
+                animation: rotate-right 0.5s;
+            }
     }
     
     &--left {
         left: 9rem;
         transform: rotateY(180deg);
-    }
 
-    &--left-animated {
-        animation: rotate-left 0.5s;
-    }
+            &-animated {
+                animation: rotate-left 0.5s;
+            }
+    } 
 }
 
 @keyframes rotate-right {

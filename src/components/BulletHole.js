@@ -10,6 +10,8 @@ const BulletHole = ({
 
     const delay = Math.floor(Math.random() * (3700 - 2000)) + 2000;
 
+    const holeClassName = `bullet-hole bullet-hole__${index} ${isVisible ? `bullet-hole__${index}--is-visible` : ''}`;
+
     useEffect(() => {
         setTimeout(() => {
             setIsVisible(true)
@@ -17,7 +19,7 @@ const BulletHole = ({
     }, []);
 
     return (
-        <img alt="bullet hole" src={bulletHoleSrc} className={`bullet-hole bullet-hole__${index} ${isVisible ? `bullet-hole__${index}--is-visible` : ''}`} />
+        <img alt="bullet hole" src={bulletHoleSrc} className={holeClassName} />
     );
 }
 

@@ -1,19 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import { green, yellow, brown } from '../helpers/colors';
+
 const LifeBar = ({
     isLeft,
     playerPoints
 }) => {
-    const points = playerPoints < 0 ? 0 : playerPoints
+    const points = playerPoints < 0 ? 0 : playerPoints;
     const barWidth = `${(points * 10) / 5}%`;
-    let color = '#5e8c6a';
+    let color = green;
 
     if (playerPoints < 30) {
-        color = '#edc951';
+        color = yellow;
     }
     if (playerPoints < 10) {
-        color = '#2b1d0e';
+        color = brown;
     }
 
     return (

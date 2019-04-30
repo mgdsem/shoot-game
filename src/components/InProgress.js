@@ -61,10 +61,12 @@ class InProgress extends Component {
     }
 
     onAfterShoot(playerPoints) {
+
         this.setState((prevState) => {
             const newPoints = prevState[playerPoints] - getRandomNumber();
             const isGameWon = newPoints <= 0;
             let winner = '';
+
             if (isGameWon) {
                 winner = prevState.isPlayer1Active ? this.props.player1 : this.props.player2;
             }
@@ -72,36 +74,39 @@ class InProgress extends Component {
             return {
                 isPlayer1Active: !prevState.isPlayer1Active,
                 [playerPoints]: newPoints,
-                isGameWon: isGameWon,
-                winner: winner
+                isGameWon,
+                winner
             }
         });
     }
 
     render() {
+        const { player1, player2 } = this.props;
+        const { player1Points, player2Points, isPlayer1Active } = this.state;
+
         return (
             <div>
                 <div className="shooter-label__wrapper">
                     <div className="shooter-label__inner-wrapper">
                         <img alt="shooter label" className="shooter-label" src={shooterLabel} />
-                        <div className="shooter-label__text">{this.props.player1}</div>
+                        <div className="shooter-label__text">{player1}</div>
                     </div>
 
                     <div className="shooter-label__inner-wrapper">
                         <img alt="shooter label" className="shooter-label" src={shooterLabel} />
-                        <div className="shooter-label__text">{this.props.player2}</div>
+                        <div className="shooter-label__text">{player2}</div>
                     </div>
                 </div>
 
                 <div className="life-bar__wrapper">
-                    <LifeBar playerPoints={this.state.player1Points} isLeft />
+                    <LifeBar playerPoints={player1Points} isLeft />
                     <img alt="skull" className="skull" src={skull} />
-                    <LifeBar playerPoints={this.state.player2Points} isRight />
+                    <LifeBar playerPoints={player2Points} isRight />
                 </div>
 
-                <div className={`life-bar__pointer-wrapper ${!this.state.isPlayer1Active ? 'life-bar__pointer-wrapper--switch' : ''}`}>
+                <div className={`life-bar__pointer-wrapper ${!isPlayer1Active ? 'life-bar__pointer-wrapper--switch' : ''}`}>
                     <div className="life-bar__pointer-wrapper__active-div">
-                        <img alt="gun" className={`life-bar__pointer ${this.state.isPlayer1Active ? 'life-bar__pointer--is-left' : ''}`} src={pistol2} />
+                        <img alt="gun" className={`life-bar__pointer ${isPlayer1Active ? 'life-bar__pointer--is-left' : ''}`} src={pistol2} />
                     </div>
 
                     <div className="life-bar__pointer-wrapper__unactive-div"></div>

@@ -24,17 +24,19 @@ class EndGame extends Component {
     }
 
     componentDidMount() {
+        document.addEventListener('keyup', this.onEnter);
+
         setTimeout(() => {
             this.setState({
                 isTextVisible: true
             })
         }, 100);
+
         setTimeout(() => {
             this.setState({
                 isNameVisible: true
             })
         }, 1000);
-        document.addEventListener('keyup', this.onEnter);
     }
 
     componentWillUnmount() {
@@ -48,6 +50,8 @@ class EndGame extends Component {
     }
 
     render() {
+        const { isTextVisible, isNameVisible } = this.state;
+        const { winner, onTryAgain } = this.props;
         return (
             <div className="end-game__wrapper">
                 <div className="holes-wrapper">
@@ -57,11 +61,11 @@ class EndGame extends Component {
 
                 <div className="end-game">
                     <div className="end-text__wrapper">
-                        <div className={`end-text ${this.state.isTextVisible ? 'end-text--is-visible' : ''}`}>The winner is</div>
-                        <div className={`end-text__name ${this.state.isNameVisible ? 'end-text__name--is-visible' : ''}`}>{this.props.winner}</div>
+                        <div className={`end-text ${isTextVisible ? 'end-text--is-visible' : ''}`}>The winner is</div>
+                        <div className={`end-text__name ${isNameVisible ? 'end-text__name--is-visible' : ''}`}>{winner}</div>
                     </div>
 
-                    <Button onClick={this.props.onTryAgain}>
+                    <Button onClick={onTryAgain}>
                         <div className="end-game__fire-wrapper">
                             <div className="end-game__fire-text">try</div>
                             <img alt="fire" className="end-game__fire-img" src={flame} />
@@ -77,7 +81,7 @@ class EndGame extends Component {
                 </div>
 
             </div>
-        )
+        );
     }
 }
 

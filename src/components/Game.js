@@ -14,10 +14,7 @@ class Game extends Component {
 
         this.state = {
             currentGameStatus: 'before',
-            player1: '',
-            player2: '',
-            winner: '',
-
+            winner: ''
         }
     }
 
@@ -31,7 +28,7 @@ class Game extends Component {
 
     onEndGame(winner) {
         this.setState({
-            winner: winner,
+            winner,
             currentGameStatus: 'endGame'
         });
     }
@@ -43,20 +40,23 @@ class Game extends Component {
     }
 
     render() {
+        const { player1, player2, winner } = this.state;
         return (
             <div>
                 {this.state.currentGameStatus === 'before' && <BeforeGame onStartGame={this.onStartGame} />}
                 {this.state.currentGameStatus === 'inProgress' &&
                     <InProgress
-                        player1={this.state.player1}
-                        player2={this.state.player2}
+                        player1={player1}
+                        player2={player2}
                         onEndGame={this.onEndGame}
                     />
                 }
-                {this.state.currentGameStatus === 'endGame' && <EndGame
-                    winner={this.state.winner}
-                    onTryAgain={this.onTryAgain}
-                />}
+                {this.state.currentGameStatus === 'endGame' && (
+                    <EndGame
+                        winner={winner}
+                        onTryAgain={this.onTryAgain}
+                    />
+                )}
             </div>
         );
     }
