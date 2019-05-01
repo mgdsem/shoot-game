@@ -1,6 +1,16 @@
 .boom {
-    width: 20rem;
-    height: 20rem;
+    width: 10rem;
+    height: 10rem;
+
+    @include at-medium {
+        width: 20rem;
+        height: 20rem;
+    }
+
+    @include at-small {
+        width: 15rem;
+        height: 15rem;
+    }
 
     &__wrapper {
         @include flex-center;
@@ -10,10 +20,20 @@
     }
 
     &__text {
-        font-size: 4rem;
+        font-size: 2rem;
         position: absolute;
         font-family: 'Lobster', cursive;
-        width: 30rem;
+        width: 20rem;
+
+        @include at-medium {
+            font-size: 4rem;
+            width: 30rem;
+        }
+
+        @include at-small {
+            font-size: 3rem;
+            width: 25rem;
+        }
 
        &:hover {
            color: $shooter-gold;

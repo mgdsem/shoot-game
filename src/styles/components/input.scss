@@ -4,22 +4,59 @@
     border-bottom: 0.5rem black double;
     text-align: center;
     padding-bottom: 1.5rem;
-    font-size: 2rem;
+    font-size: 0.8rem;
     font-family: 'Alfa Slab One', cursive;
     color: $shooter-gold;;
     text-shadow: 0.2rem -0.2rem #000;
     letter-spacing: 0.04rem;
     outline: 0;
 
+    @include at-small {
+        font-size: 1.2rem;
+    }
+
+    @include at-medium-very-small {
+        font-size: 1.5rem;
+    }
+
+    @include at-medium {
+        font-size: 2rem;
+    }
+
     &::placeholder {
         font-family: 'Lobster', cursive;
         color: $shooter-placeholder-color;
         text-shadow: none;
-        font-size: 2.5rem;
+        font-size: 1rem;
+
+        @include at-small {
+            font-size: 1.2rem;
+        }
+
+        @include at-medium-very-small {
+            font-size: 2rem;
+        }
+
+        @include at-medium {
+            font-size: 2.5rem;
+        }
+
     }
     
     &__label {
-        font-size: 2.7rem;
+        font-size: 1rem;
+
+        @include at-small {
+            font-size: 1.5rem;
+        }
+
+        @include at-medium-very-small {
+            font-size: 2rem;
+        }
+
+        @include at-medium {
+            font-size: 2.7rem;
+        }
     }
 
     &__label-text {
@@ -27,7 +64,13 @@
         font-family: 'Lobster', cursive;
 
         &:hover {
-            font-size: 2.8rem;
+            @include at-medium-very-small {
+                font-size: 2.8rem
+            }
+
+            @include at-medium {
+                font-size: 2.2rem;
+            }
         }
     }
 
@@ -49,9 +92,25 @@
     }
 
     &__arrow {
-        width: 20rem;
-        height: 8rem;
+        width: 6rem;
+        height: 2rem;
         transform: translateY(-20%);
+
+        @include at-small {
+            width: 10rem;
+            height: 4rem;
+        }
+
+        @include at-medium-very-small {
+            width: 15rem;
+            height: 6rem;
+        }
+
+        @include at-medium {
+            width: 20rem;
+            height: 8rem;
+        }
+
 
         &--is-right {
             transform: rotateY(180deg) translateY(-20%);  

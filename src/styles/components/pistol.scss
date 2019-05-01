@@ -1,17 +1,53 @@
 .pistol {
-    width: 12rem;
-    height: 12rem;
+    width: 5rem;
+    height: 5rem;
     position: absolute;
-    top: 1rem;
+    top: 3rem;
     display: block;
     border: 0;
     background-color: transparent;
     outline: 0;
     cursor: crosshair;
 
-    img {
-        width: 12rem;
+    @include at-small {
+        width: 7rem;
+        height: 7rem;
+        top: 2rem;
+    }
+
+    @include at-medium-very-small {
+        width: 9rem;
+        height: 9rem;
+        top: 3rem;
+    }
+
+    @include at-medium {
         height: 12rem;
+        width: 12rem;
+        top: 1rem;
+    }
+
+
+    img {
+        width: 5rem;
+        height: 5rem;
+        margin-left: 2rem;
+        margin-right: 2rem;
+
+        @include at-small {
+            width: 7rem;
+            height: 7rem;
+        }
+
+        @include at-medium-very-small {
+            width: 9rem;
+            height: 9rem;
+        }
+
+        @include at-medium {
+            width: 12rem;
+            height: 12rem;
+        }
     }
     
     &--right {
