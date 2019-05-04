@@ -3,17 +3,37 @@
 
     position: absolute;
     display: none;
+    width: 70px;
+    height: 70px;
+
+    @include at-phone-small {
+        width: 100px;
+    height: 100px;
+    }
+
+    @include at-medium-small-II {
+        width: 180px;
+        height:180px;
+    }
 
     &__1 {
         @include translate(50px, 20px);
-        
+
         &--is-visible {
             display: block;
         }
     }
 
     &__2 {
-        @include translate(300px, -300px);
+        @include translate(110px, -140px);
+
+        @include at-medium-very-small {
+            @include translate(180px, -180px)
+        }
+
+        @include at-medium {
+            @include translate(230px, -300px);
+        }
 
         &--is-visible {
             display: block;
@@ -21,7 +41,20 @@
     }
 
     &__3 {
-        @include translate(230px, -220px);
+        @include translate(40px, -100px);
+
+        @include at-phone-small {
+            @include translate(65px, -200px);
+
+        }
+
+        @include at-medium-very-small {
+            @include translate(130px, -220px);
+        }
+
+        @include at-medium {
+            @include translate(230px, -220px);
+        }
 
         &--is-visible {
             display: block;
@@ -29,7 +62,15 @@
     }
 
     &__4 {
-        @include translate(100px, 150px);
+        @include translate(10px, 10px);
+
+        @include at-phone-small {
+            @include translate(60px, 150px);
+        }
+
+        @include at-medium-very-small {
+            @include translate(100px, 150px);
+        }
 
         &--is-visible {
             display: block;

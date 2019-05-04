@@ -1,5 +1,29 @@
 .skull {
-    widows: 15rem;
-    height: 15rem;
-    margin: 0 3.5rem;
+    width: 4rem;
+    height: 4rem;
+    margin: 0 3rem;
+
+    @include at-phone-small {
+        width: 8rem;
+        height: 8rem;
+        margin: 0 4rem;
+    }
+
+    @include at-medium-small-II {
+        width: 10rem;
+        height: 10rem;
+        margin: 0 5.5rem;
+    }
+
+    @include at-medium {
+        width: 12rem;
+        height: 12rem;
+        margin: 0 4rem;
+    }
+
+    @include at-medium-large-II {
+        width: 15rem;
+        height: 15rem; 
+        margin: 0 3.5rem;
+    }
 }

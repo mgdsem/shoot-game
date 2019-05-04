@@ -29,10 +29,17 @@
 
 
     img {
-        width: 5rem;
-        height: 5rem;
-        margin-left: 2rem;
-        margin-right: 2rem;
+        width: 4rem;
+        height: 4rem;
+        margin-left: 5rem;
+        margin-right: 5rem;
+
+        @include at-very-small {
+            width: 5rem;
+            height: 5rem;
+            margin-left: 2rem;
+            margin-right: 2rem;
+        }
 
         @include at-small {
             width: 7rem;

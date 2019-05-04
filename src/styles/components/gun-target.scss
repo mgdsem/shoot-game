@@ -1,6 +1,12 @@
 .gun-target {
-    width: 15rem;
-    height: 15rem;
+    width: 10rem;
+    height: 10rem;
+    outline: 0;
+
+    @include at-medium {
+        width: 15rem;
+        height: 15rem;
+    }
     
     &__wrapper {
         @include flex-center;
@@ -8,8 +14,13 @@
     }
 
     &__text {
-        font-size: 1rem;
+        font-size: 0.7rem;
         font-family: 'Lobster', cursive;
-        transform: translateY(-8.5rem);
+        transform: translateY(-6rem);
+
+        @include at-medium {
+            font-size: 1rem;
+            transform: translateY(-8.5rem);
+        }
     }
 }

@@ -4,12 +4,16 @@
     border-bottom: 0.5rem black double;
     text-align: center;
     padding-bottom: 1.5rem;
-    font-size: 0.8rem;
+    font-size: 0.6rem;
     font-family: 'Alfa Slab One', cursive;
     color: $shooter-gold;;
     text-shadow: 0.2rem -0.2rem #000;
     letter-spacing: 0.04rem;
     outline: 0;
+
+    @include at-very-small {
+        font-size: 0.8rem; 
+    }
 
     @include at-small {
         font-size: 1.2rem;
@@ -27,7 +31,11 @@
         font-family: 'Lobster', cursive;
         color: $shooter-placeholder-color;
         text-shadow: none;
-        font-size: 1rem;
+        font-size: 0.8rem;
+
+        @include at-very-small {
+            font-size: 1rem; 
+        }
 
         @include at-small {
             font-size: 1.2rem;
@@ -44,7 +52,11 @@
     }
     
     &__label {
-        font-size: 1rem;
+        font-size: 0.7rem;
+
+        @include at-very-small {
+            font-size: 1rem;
+        }
 
         @include at-small {
             font-size: 1.5rem;
@@ -92,9 +104,14 @@
     }
 
     &__arrow {
-        width: 6rem;
-        height: 2rem;
+        width: 4rem;
+        height: 1.5rem;
         transform: translateY(-20%);
+
+        @include at-very-small {
+            width: 6rem;
+            height: 2rem;  
+        }
 
         @include at-small {
             width: 10rem;

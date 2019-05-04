@@ -11,10 +11,36 @@
     
     &__inner-wrapper {
         position: relative;
-        width: 50rem;
-        height: 5rem;
+        width: 10rem;
+        height: 2rem;
         background-color: transparent;
-        border: 0.5rem solid $life-bar-border-black;
+        border: 0.3rem solid $life-bar-border-black;
+
+        @include at-phone-small {
+            width: 15rem;
+            height: 3rem; 
+        }
+
+        @include at-small-II {
+            width: 20rem;
+            height: 4rem;
+        }
+
+        @include at-medium-small-II {
+            width: 30rem;
+            height: 4rem;
+            border: 0.5rem solid $life-bar-border-black;
+        }
+
+        @include at-medium {
+            width: 40rem;
+            height: 5rem;
+        }
+
+        @include at-medium-large-II {
+            width: 50rem;
+            height: 5rem;
+        }
     }
 
     &__wrapper {
@@ -25,8 +51,23 @@
     }
 
     &__pointer {
-        width: 12rem;
-        height: 6rem;
+        width: 5rem;
+        height: 2rem;
+
+        @include at-phone-small {
+            width: 7rem;
+            height: 3rem; 
+        }
+
+        @include at-medium-small-II {
+            width: 9rem;
+            height: 4rem; 
+        }
+
+        @include at-medium {
+            width: 12rem;
+            height: 6rem;
+        }
         
          &--is-left {
             transform: rotateY(180deg);

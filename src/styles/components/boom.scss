@@ -20,19 +20,24 @@
     }
 
     &__text {
-        font-size: 2rem;
+        font-size: 1.5rem;
         position: absolute;
         font-family: 'Lobster', cursive;
-        width: 20rem;
+        width: 15rem;
 
-        @include at-medium {
-            font-size: 4rem;
-            width: 30rem;
+        @include at-very-small {
+            font-size: 2rem;
+            width: 20rem;
         }
 
         @include at-small {
             font-size: 3rem;
             width: 25rem;
+        }
+
+        @include at-medium {
+            font-size: 4rem;
+            width: 30rem;
         }
 
        &:hover {
